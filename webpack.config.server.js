@@ -1,6 +1,7 @@
 // webpack.config.server.js
 const nodeExternals = require('webpack-node-externals')
 const path = require('path')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   name: 'server',
@@ -31,4 +32,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ context: 'server', from: 'views', to: 'views' }],
+    }),
+  ],
 }

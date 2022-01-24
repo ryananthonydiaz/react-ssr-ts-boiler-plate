@@ -1,13 +1,1 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const server = (0, express_1.default)();
-server.get('/', (req, res) => {
-    res.send('Hello from Server');
-});
-server.listen(3000, () => {
-    console.log(`Server running on http://localhost:3000`);
-});
+(()=>{"use strict";var e={304:function(e,t,r){var n=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0}),t.App=void 0;const s=n(r(689));t.App=()=>s.default.createElement("p",null,"Hello from Client")},853:function(e,t,r){var n=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});const s=n(r(860)),o=n(r(147)),i=n(r(17)),u=n(r(689)),a=n(r(684)),l=r(304),d=(0,s.default)();d.set("view engine","ejs"),d.set("views",i.default.join(__dirname,"views")),d.use("/",s.default.static(i.default.join(__dirname,"static")));const f=o.default.readFileSync(i.default.join(__dirname,"static/manifest.json"),"utf-8"),p=JSON.parse(f);d.get("/",((e,t)=>{const r=a.default.renderToString(u.default.createElement(l.App));t.render("client",{assets:p,component:r})})),d.listen(3e3,(()=>console.log("server running on PORT=3000")))},860:e=>{e.exports=require("express")},689:e=>{e.exports=require("react")},684:e=>{e.exports=require("react-dom/server")},147:e=>{e.exports=require("fs")},17:e=>{e.exports=require("path")}},t={};!function r(n){var s=t[n];if(void 0!==s)return s.exports;var o=t[n]={exports:{}};return e[n].call(o.exports,o,o.exports,r),o.exports}(853)})();
